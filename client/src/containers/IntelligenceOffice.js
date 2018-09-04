@@ -1,4 +1,5 @@
 import React from 'react';
+import SatelliteControl from '../components/SatelliteControl'
 
 class IntelligenceOffice extends React.Component{
   constructor(props) {
@@ -15,6 +16,7 @@ render(){
   return(
     <div className="intelligence-office-container">
       <p>Hello World!</p>
+      <SatelliteControl />
     </div>
   );
 
