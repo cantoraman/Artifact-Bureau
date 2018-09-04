@@ -4,7 +4,7 @@ class IntelligenceOffice extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      artifacts = [];
+      artifacts: []
     }
 
 
