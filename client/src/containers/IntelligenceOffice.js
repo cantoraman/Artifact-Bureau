@@ -1,5 +1,9 @@
 import React from 'react';
-import SatelliteControl from '../components/SatelliteControl'
+import SatelliteControl from '../components/SatelliteControl';
+import SatelliteControl from '../components/ArtifactStorage';
+import SatelliteControl from '../components/SafeChannel';
+import SatelliteControl from '../components/DataLibrary';
+import PageTitle from '../components/PageTitle';
 
 class IntelligenceOffice extends React.Component{
   constructor(props) {
@@ -12,12 +16,18 @@ class IntelligenceOffice extends React.Component{
   }
 
 
+
+
 render(){
   return(
     <div className="intelligence-office-container">
-       <div id="mapid"></div>
-      <p>Hello World!</p>
+      <PageTitle
+        title="The Intelligence Office"
+        description="HQ" />
       <SatelliteControl />
+      <SafeChannel />
+      <DataLibrary />
+      <ArtifactStorage />
     </div>
   );
 

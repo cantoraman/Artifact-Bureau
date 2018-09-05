@@ -1,15 +1,5 @@
 import React from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-
-const API_KEY = require('../helpers/api_key.js');
-
-
-
-
-// const mapControl = new MapControl();
-// mapControl.initializeMap();
-
-
+import MapControl from '../controllers/MapControl'
 
 
 class SatelliteControl extends React.Component{
@@ -18,7 +8,6 @@ class SatelliteControl extends React.Component{
     this.state = {
       currentLocation : null
     }
-
   }
 
 
@@ -26,19 +15,13 @@ class SatelliteControl extends React.Component{
 
     const position = [51.505, -0.09];
     return(
-        <Map center={position} zoom={8}>
-          <TileLayer
-            url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
-            attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors"
-            id= 'mapbox.streets'
-            accessToken= {API_KEY}
-          />
-
-        </Map>
+      <div className="sat-control">
+        <MapControl />
+      </div>
 
     );
 
-    }
+  }
 
 }
 
