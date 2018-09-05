@@ -13,12 +13,14 @@ background-size:16px 16px;
 }
 
 .page-title{
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
   background-color:rgba(255, 0, 0, 0.39);
   /* font-family: 'Oswald', sans-serif;
   font-family: 'Press Start 2P', cursive; */
   font-family: 'IM Fell English SC', serif;
   color: rgb(241, 181, 0);
-  width: 40%;
+  /* width: 40%; */
   margin: 10px;
   padding: 10px;
 }
@@ -30,33 +32,48 @@ background-size:16px 16px;
 }
 
 .sat-control {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
   margin: 10px;
-  width: 40%;
+  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
 }
 
 .safe-channel {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   margin: 10px;
-  width: 40%;
+  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
 }
 
 .data-library {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+
   margin: 10px;
-  width: 40%;
+  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
 }
 
 .artifact-storage {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
   margin: 10px;
-  width: 40%;
+  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
+}
+
+.intelligence-office-container{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
 }

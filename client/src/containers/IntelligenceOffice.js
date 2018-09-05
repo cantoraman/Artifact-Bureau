@@ -1,8 +1,8 @@
 import React from 'react';
 import SatelliteControl from '../components/SatelliteControl';
-import SatelliteControl from '../components/ArtifactStorage';
-import SatelliteControl from '../components/SafeChannel';
-import SatelliteControl from '../components/DataLibrary';
+import ArtifactStorage from '../components/ArtifactStorage';
+import SafeChannel from '../components/SafeChannel';
+import DataLibrary from '../components/DataLibrary';
 import PageTitle from '../components/PageTitle';
 
 class IntelligenceOffice extends React.Component{
@@ -14,8 +14,6 @@ class IntelligenceOffice extends React.Component{
 
 
   }
-
-
 
 
 render(){
