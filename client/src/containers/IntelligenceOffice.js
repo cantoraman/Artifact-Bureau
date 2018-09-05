@@ -15,6 +15,7 @@ class IntelligenceOffice extends React.Component{
 render(){
   return(
     <div className="intelligence-office-container">
+       <div id="mapid"></div>
       <p>Hello World!</p>
       <SatelliteControl />
     </div>
