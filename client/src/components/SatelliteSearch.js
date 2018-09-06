@@ -12,12 +12,6 @@ constructor(props){
   this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-handleAuthorChange(evt){
-  this.setState({
-    author: evt.target.value
-  });
-}
-
 handleSearchTextChange(event){
   this.setState({
     searchLocation: event.target.value
