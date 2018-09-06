@@ -43,12 +43,7 @@ class MapControl extends Component{
       position={this.state.markerCoordinates}  /> )
   };
 
-
-
-
   render(){
-
-
     return(
       <Map
         className="map-container"
