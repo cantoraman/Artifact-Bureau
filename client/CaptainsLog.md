@@ -11,3 +11,10 @@ Another question arose: does node and react work together flawlessly... Google r
 
 npm install react-leaflet
 npm install leaflet react react-dom
+
+## ToDo:
+complete sat control by
+-zoom to a location functionality
+-reasonable depth... far. if possible
+-scan functionality
+  where the game functionality begins... think hard

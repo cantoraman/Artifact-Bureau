@@ -13,9 +13,9 @@ class MapControl extends React.Component{
 
   render(){
 
-    const position = [51.505, -0.09];
+
     return(
-      <Map center={position} zoom={8}>
+      <Map className="map-container" center={this.props.viewedLocation} zoom={12}>
         <TileLayer
           url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
           attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors "
