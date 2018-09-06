@@ -1,5 +1,5 @@
 import React from 'react';
-import MapControl from '../controllers/MapControl'
+import MapControl from './MapControl'
 import SatelliteSearch from './SatelliteSearch'
 import SatelliteScan from './SatelliteScan'
 
@@ -9,9 +9,14 @@ class SatelliteControl extends React.Component{
     this.state = {
       coordinates : [51.505, -0.09],
       name : "London",
-      scanDisabled : true
+      scanDisabled : true,
+      currentLocation : null,
+      markered : false,
+      markerCoordinates: [],
+      scanned : false
     }
     this.submitSearch = this.submitSearch.bind(this);
+    this.mapClicked = this.mapClicked.bind(this);
   }
 
   submitSearch(event){
@@ -29,11 +34,30 @@ class SatelliteControl extends React.Component{
     });
   }
 
+  mapClicked(event){
+      if(!this.state.markered){
+        this.setState({
+        markered:true,
+        markerCoordinates: [event.lat, event.lng]
+        })
+      }
+      else{
+        this.setState({
+        markerCoordinates: [event.lat, event.lng]
+        })
+      }
+  }
+
+
   render(){
     return(
       <div className="sat-control">
-        <MapControl viewedLocation={this.state.coordinates}/>
-        <SatelliteSearch onSearchSubmit={this.submitSearch}/>
+        <MapControl
+          viewedLocation={this.state.coordinates}
+          onMapClicked={this.mapClicked}
+          markerCoordinates={this.state.markerCoordinates}
+          markered={this.state.markered}/>
+        <SatelliteSearch onSearchSubmit={this.submitSearch} />
         <SatelliteScan disabled={this.state.scanDisabled} />
       </div>
     );
