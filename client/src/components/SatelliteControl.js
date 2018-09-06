@@ -9,7 +9,6 @@ class SatelliteControl extends React.Component{
     this.state = {
       coordinates : [51.505, -0.09],
       name : "London",
-      scanDisabled : true,
       currentLocation : null,
       markered : false,
       markerCoordinates: [],
@@ -48,6 +47,9 @@ class SatelliteControl extends React.Component{
       }
   }
 
+  scanClicked(){
+
+  }
 
   render(){
     return(
@@ -58,7 +60,7 @@ class SatelliteControl extends React.Component{
           markerCoordinates={this.state.markerCoordinates}
           markered={this.state.markered}/>
         <SatelliteSearch onSearchSubmit={this.submitSearch} />
-        <SatelliteScan disabled={this.state.scanDisabled} />
+        <SatelliteScan disabled={!this.state.markered} onScanClicked={this.scanClicked} />
       </div>
     );
   }

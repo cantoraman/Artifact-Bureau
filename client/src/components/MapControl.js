@@ -7,20 +7,6 @@ const MapControl = (props) => {
 
   let mapRef = createRef()
 
-  // handleClick = (event) => {
-  //   if(!this.state.markered){
-  //     this.setState({
-  //     markered:true,
-  //     markerCoordinates: [event.latlng.lat, event.latlng.lng]
-  //     })
-  //   }
-  //   else{
-  //     this.setState({
-  //     markerCoordinates: [event.latlng.lat, event.latlng.lng]
-  //     })
-  //   }
-  //   }
-
   function renderMarker(){
   const image = new Leaflet.Icon({
                iconUrl: require('../helpers/radar.gif'),
@@ -36,7 +22,6 @@ const MapControl = (props) => {
   function handleClick(evt){
     props.onMapClicked(evt.latlng);
   }
-
 
     return(
       <Map
