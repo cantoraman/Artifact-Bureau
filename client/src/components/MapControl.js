@@ -27,7 +27,7 @@ const MapControl = (props) => {
       <Map
         className="map-container"
         center={props.viewedLocation}
-        zoom={12}
+        zoom={props.zoom}
         ref={this.mapRef}
         onClick={handleClick}
         >

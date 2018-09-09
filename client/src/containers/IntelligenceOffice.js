@@ -16,7 +16,7 @@ class IntelligenceOffice extends React.Component{
         },
         {
           name: "Kasikci Diamond",
-          location: [40.505, 30]
+          location: [41.008, 28.97]
         }
       ]
     }
