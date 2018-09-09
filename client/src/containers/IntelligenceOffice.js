@@ -9,7 +9,16 @@ class IntelligenceOffice extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      artifacts: []
+      artifacts: [
+        {
+          name: "Vindolanda tablets",
+          location: [51.505, -0.12]
+        },
+        {
+          name: "Kasikci Diamond",
+          location: [40.505, 30]
+        }
+      ]
     }
 
 
@@ -22,7 +31,7 @@ render(){
       <PageTitle
         title="The Intelligence Office"
         description="HQ" />
-      <SatelliteControl />
+      <SatelliteControl artifacts={this.state.artifacts} />
       <SafeChannel />
       <DataLibrary />
       <ArtifactStorage />
