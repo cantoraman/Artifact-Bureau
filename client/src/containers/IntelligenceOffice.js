@@ -13,27 +13,32 @@ class IntelligenceOffice extends React.Component{
         {
           name: "The Rosetta Stone",
           location: [31.404, 30.416],
-          locationName: "Rosetta"
+          locationName: "Rosetta",
+          state: "lost"
         },
         {
           name: "The Crystal Skull",
           location: [41.009, 28.965],
-          locationName: "Istanbul"
+          locationName: "Istanbul",
+          state: "lost"
         },
         {
           name: "Horse of Selene",
           location: [48.208, 16.372],
-          locationName: "Vienna"
+          locationName: "Vienna",
+          state: "lost"
         },
         {
           name: "The Sutton Hoo Helmet",
           location: [-27.125, -109.349],
-          locationName: "Easter Island"
+          locationName: "Easter Island",
+          state: "lost"
         },
         {
           name: "The Lewis Chessmen",
           location: [8.925, -79.549],
-          locationName: "The Panama Canal"
+          locationName: "The Panama Canal",
+          state: "lost"
         }
       ]
     }

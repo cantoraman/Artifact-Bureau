@@ -75,5 +75,8 @@ The buyer is very eager to lay his hands on this big chunk of crystal. We will m
 I couldn't sell the helm(Sutton Hoo) yet but it is safe under the shadow of Moais
 >> Easter Island
 
-The pieces(The Lewis Chessmen) were sold to a player living near the canal that connects the oceans.
+The pieces(The Lewis Chessmen) were sold to the player living by the canal that connects the oceans.
 >> Panama
+
+## ToDo:
+  map marker changes shape depending on the zoom level of the map
