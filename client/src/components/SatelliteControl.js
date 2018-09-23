@@ -14,7 +14,8 @@ class SatelliteControl extends React.Component{
       markerCoordinates: [],
       scanned : false,
       scanSensitivity: [0.5,0.5],
-      zoom: 4
+      zoom: 4,
+      isArtifactFound: false
     }
     this.submitSearch = this.submitSearch.bind(this);
     this.mapClicked = this.mapClicked.bind(this);
@@ -58,17 +59,15 @@ class SatelliteControl extends React.Component{
 
   scanForArtifact(){
     const artifacts = this.props.artifacts;
-
     const lat = this.state.markerCoordinates[0];
     const lng = this.state.markerCoordinates[1];
 
-
     for(let artifact of artifacts){
       if(Math.abs(artifact.location[0]-lat)<this.state.scanSensitivity[1] && Math.abs(artifact.location[1]-lng)<this.state.scanSensitivity[1]){
-        console.log("SUCCESS");
-
+        this.setState({
+          isArtifactFound: true
+        });
       }
-
     }
   }
 

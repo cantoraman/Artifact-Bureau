@@ -11,12 +11,29 @@ class IntelligenceOffice extends React.Component{
     this.state = {
       artifacts: [
         {
-          name: "Vindolanda tablets",
-          location: [51.505, -0.12]
+          name: "The Rosetta Stone",
+          location: [31.404, 30.416],
+          locationName: "Rosetta"
         },
         {
-          name: "Kasikci Diamond",
-          location: [41.008, 28.97]
+          name: "The Crystal Skull",
+          location: [41.009, 28.965],
+          locationName: "Istanbul"
+        },
+        {
+          name: "Horse of Selene",
+          location: [48.208, 16.372],
+          locationName: "Vienna"
+        },
+        {
+          name: "The Sutton Hoo Helmet",
+          location: [-27.125, -109.349],
+          locationName: "Easter Island"
+        },
+        {
+          name: "The Lewis Chessmen",
+          location: [8.925, -79.549],
+          locationName: "The Panama Canal"
         }
       ]
     }

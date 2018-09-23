@@ -9,7 +9,7 @@ const MapControl = (props) => {
 
   function renderMarker(){
   const image = new Leaflet.Icon({
-               iconUrl: require('../helpers/radar.gif'),
+               iconUrl: require('../helpers/radar3.gif'),
                iconSize:     [100, 100],
                iconAnchor:   [50, 50],
            });
