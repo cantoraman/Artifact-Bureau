@@ -2,19 +2,6 @@ import React from 'react';
 import Artifact from './Artifact';
 
 const ArtifactSelection = (props) => {
-  // {
-  //   name: "The Lewis Chessmen",
-  //   location: [8.925, -79.549],
-  //   locationName: "The Panama Canal",
-  //   state: "lost"
-  // }
-
-
-
-  // handleSelect(){
-  //   console.log(change.target.value);
-  // //  props.onSelectArtifact(artifact.name);
-  // }
 
   const displayArtifacts = props.artifacts.map((artifact, index) => {
     return (

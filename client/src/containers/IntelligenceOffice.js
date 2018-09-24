@@ -14,37 +14,51 @@ class IntelligenceOffice extends React.Component{
           name: "The Rosetta Stone",
           location: [31.404, 30.416],
           locationName: "Rosetta",
-          state: "lost"
+          lost: true
         },
         {
           name: "The Crystal Skull",
           location: [41.009, 28.965],
           locationName: "Istanbul",
-          state: "lost"
+          lost: true
         },
         {
           name: "Horse of Selene",
           location: [48.208, 16.372],
           locationName: "Vienna",
-          state: "lost"
+          lost: true
         },
         {
           name: "The Sutton Hoo Helmet",
           location: [-27.125, -109.349],
           locationName: "Easter Island",
-          state: "lost"
+          lost: true
         },
         {
           name: "The Lewis Chessmen",
           location: [8.925, -79.549],
           locationName: "The Panama Canal",
-          state: "lost"
+          lost: true
         }
       ]
     }
 
-
+    this.artifactFound = this.artifactFound.bind(this);
   }
+
+
+artifactFound(foundArtifact){
+  for (var artifact of this.state.artifacts)
+  {
+    if(artifact.name === foundArtifact.name){
+      let newArtifact=artifact;
+      newArtifact.lost=false;
+      this.setState({
+        artifact: newArtifact
+      });
+    }
+  }
+}
 
 
 render(){
@@ -53,7 +67,9 @@ render(){
       <PageTitle
         title="The Intelligence Office"
         description="HQ" />
-      <SatelliteControl artifacts={this.state.artifacts} />
+      <SatelliteControl
+        artifacts={this.state.artifacts}
+        artifactFound={this.artifactFound}/>
       <SafeChannel />
       <DataLibrary />
       <ArtifactStorage />

@@ -17,13 +17,16 @@ class SatelliteControl extends React.Component{
       scanSensitivity: [0.5,0.5],
       zoom: 4,
       artifactToScanSelected: false,
-      artifactSelection: null
+      artifactSelection: null,
+      scanMessage: null,
+      opacity: 0
     }
     this.submitSearch = this.submitSearch.bind(this);
     this.mapClicked = this.mapClicked.bind(this);
     this.scanClicked = this.scanClicked.bind(this);
     this.scanForArtifact = this.scanForArtifact.bind(this);
     this.artifactSelected = this.artifactSelected.bind(this);
+
   }
 
   submitSearch(event){
@@ -68,24 +71,19 @@ class SatelliteControl extends React.Component{
   }
 
   scanForArtifact(artifactSelection){
-  //  const artifacts = this.props.artifacts;
+
     const artifact = artifactSelection;
     const markerLat = this.state.markerCoordinates[0];
     const markerLng = this.state.markerCoordinates[1];
 
-//    for(let artifact of artifacts){
       if(Math.abs(artifact.location[0]-markerLat)<this.state.scanSensitivity[1] && Math.abs(artifact.location[1]-markerLng)<this.state.scanSensitivity[1]){
-        // this.setState({
-        //   isArtifactFound: true
-        // });
-        console.log("HURRAY");
+        console.log(artifact);
+        this.props.artifactFound(artifact)
       }
-  //  }
   }
 
 
   render(){
-    console.log(this.state.markered, this.state.artifactToScanSelected);
     return(
       <div className="sat-control">
         <MapControl
@@ -93,7 +91,8 @@ class SatelliteControl extends React.Component{
           onMapClicked={this.mapClicked}
           markerCoordinates={this.state.markerCoordinates}
           markered={this.state.markered}
-          zoom={this.state.zoom}/>
+          zoom={this.state.zoom}
+        />
         <SatelliteSearch onSearchSubmit={this.submitSearch} />
         <p>Scan For</p>
         <ArtifactSelection

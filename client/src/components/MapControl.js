@@ -8,15 +8,19 @@ const MapControl = (props) => {
   let mapRef = createRef()
 
   function renderMarker(){
-  const image = new Leaflet.Icon({
-               iconUrl: require('../helpers/radar3.gif'),
-               iconSize:     [100, 100],
-               iconAnchor:   [50, 50],
-           });
+    const image = new Leaflet.Icon({
+     iconUrl: require('../helpers/radar3.gif'),
+     iconSize:     [100, 100],
+     iconAnchor:   [50, 50],
+    });
+
     if(props.markered)
-    return (<Marker
-      icon= {image}
-      position={props.markerCoordinates}  /> )
+    {
+      return (<Marker
+        icon= {image}
+        position={props.markerCoordinates}
+      />)
+    }
   }
 
   function handleClick(evt){
@@ -32,6 +36,7 @@ const MapControl = (props) => {
         onClick={handleClick}
         >
         {renderMarker()}
+
         <TileLayer
           url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
           attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors "
