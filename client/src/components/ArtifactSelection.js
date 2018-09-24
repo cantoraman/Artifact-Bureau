@@ -20,8 +20,7 @@ const ArtifactSelection = (props) => {
     return (
       <div>
         <Artifact
-          name={artifact.name}
-          url={artifact.url}
+          artifact={artifact}
           handleSelect={props.onSelectArtifact}
           selectedArtifact={props.selectedArtifact}
           key={index}/>

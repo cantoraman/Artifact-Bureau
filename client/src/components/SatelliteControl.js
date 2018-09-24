@@ -49,11 +49,9 @@ class SatelliteControl extends React.Component{
       markered:true,
       })
     }
-
   }
 
   artifactSelected(event){
-    console.log(event);
     this.setState({
     artifactSelection: event
     });
@@ -64,27 +62,30 @@ class SatelliteControl extends React.Component{
     }
   }
 
+
   scanClicked(){
-    this.scanForArtifact(this.artifactSelection);
+    this.scanForArtifact(this.state.artifactSelection);
   }
 
   scanForArtifact(artifactSelection){
   //  const artifacts = this.props.artifacts;
     const artifact = artifactSelection;
-    const lat = this.state.markerCoordinates[0];
-    const lng = this.state.markerCoordinates[1];
+    const markerLat = this.state.markerCoordinates[0];
+    const markerLng = this.state.markerCoordinates[1];
 
 //    for(let artifact of artifacts){
-      if(Math.abs(artifact.location[0]-lat)<this.state.scanSensitivity[1] && Math.abs(artifact.location[1]-lng)<this.state.scanSensitivity[1]){
-        this.setState({
-          isArtifactFound: true
-        });
+      if(Math.abs(artifact.location[0]-markerLat)<this.state.scanSensitivity[1] && Math.abs(artifact.location[1]-markerLng)<this.state.scanSensitivity[1]){
+        // this.setState({
+        //   isArtifactFound: true
+        // });
+        console.log("HURRAY");
       }
   //  }
   }
 
 
   render(){
+    console.log(this.state.markered, this.state.artifactToScanSelected);
     return(
       <div className="sat-control">
         <MapControl
@@ -99,7 +100,7 @@ class SatelliteControl extends React.Component{
           artifacts={this.props.artifacts}
           onSelectArtifact={this.artifactSelected}
           selectedArtifact={this.state.artifactSelection} />
-        <SatelliteScan disabled={!this.state.markered} onScanClicked={this.scanClicked} />
+        <SatelliteScan disabled={!this.state.markered || !this.state.artifactToScanSelected} onScanClicked={this.scanClicked} />
       </div>
     );
   }
