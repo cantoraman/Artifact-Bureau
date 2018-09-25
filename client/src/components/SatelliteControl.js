@@ -3,6 +3,7 @@ import MapControl from './MapControl'
 import SatelliteSearch from './SatelliteSearch'
 import SatelliteScan from './SatelliteScan'
 import ArtifactSelection from './ArtifactSelection'
+import ScanMessage from './ScanMessage'
 
 class SatelliteControl extends React.Component{
   constructor(props){
@@ -18,7 +19,7 @@ class SatelliteControl extends React.Component{
       zoom: 4,
       artifactToScanSelected: false,
       artifactSelection: null,
-      scanMessage: null,
+      scanMessage: "Waiting Scanner...",
       opacity: 0
     }
     this.submitSearch = this.submitSearch.bind(this);
@@ -93,13 +94,16 @@ class SatelliteControl extends React.Component{
           markered={this.state.markered}
           zoom={this.state.zoom}
         />
-        <SatelliteSearch onSearchSubmit={this.submitSearch} />
-        <p>Scan For</p>
-        <ArtifactSelection
-          artifacts={this.props.artifacts}
-          onSelectArtifact={this.artifactSelected}
-          selectedArtifact={this.state.artifactSelection} />
-        <SatelliteScan disabled={!this.state.markered || !this.state.artifactToScanSelected} onScanClicked={this.scanClicked} />
+        <div className="sat-side-bar">
+          <SatelliteSearch onSearchSubmit={this.submitSearch} />
+          <div className="scan-for-txt"><p>Scan For</p></div>
+          <ArtifactSelection
+            artifacts={this.props.artifacts}
+            onSelectArtifact={this.artifactSelected}
+            selectedArtifact={this.state.artifactSelection} />
+          <SatelliteScan disabled={!this.state.markered || !this.state.artifactToScanSelected} onScanClicked={this.scanClicked} />
+          <ScanMessage message={this.state.scanMessage} />
+      </div>
       </div>
     );
   }

@@ -14,7 +14,8 @@ class IntelligenceOffice extends React.Component{
           name: "The Rosetta Stone",
           location: [31.404, 30.416],
           locationName: "Rosetta",
-          lost: true
+          lost: true,
+          url: "https://en.wikipedia.org/wiki/Rosetta_Stone#/media/File:Rosetta_Stone.JPG"
         },
         {
           name: "The Crystal Skull",

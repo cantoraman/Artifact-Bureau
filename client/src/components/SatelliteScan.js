@@ -7,11 +7,13 @@ const SatelliteScan = (props) => {
   }
 
   return (
-    <button
-      disabled={props.disabled}
-      className = "scan-button"
-      onClick={handleChange}>Scan
-    </button>
+    <div className = "scan-button-container">
+      <button
+        disabled={props.disabled}
+        className = "scan-button"
+        onClick={handleChange}>Scan
+      </button>
+    </div>
     )
 
 }
