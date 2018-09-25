@@ -92,6 +92,9 @@ background-size:16px 16px;
 
 }
 .sat-side-bar{
+  background-color:#282828;
+  font-family: 'Oswald', serif;
+  color: rgb(241, 181, 0);
   grid-column: 2 / span 1;
   grid-row: 1 / span 5;
   border-style: solid;

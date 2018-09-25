@@ -79,7 +79,16 @@ class SatelliteControl extends React.Component{
 
       if(Math.abs(artifact.location[0]-markerLat)<this.state.scanSensitivity[1] && Math.abs(artifact.location[1]-markerLng)<this.state.scanSensitivity[1]){
         console.log(artifact);
+        this.setState({
+          scanMessage: "Artifact Found!"
+        })
         this.props.artifactFound(artifact)
+      }
+      else
+      {
+        this.setState({
+          scanMessage: "Scan Failed."
+        })
       }
   }
 
@@ -96,7 +105,7 @@ class SatelliteControl extends React.Component{
         />
         <div className="sat-side-bar">
           <SatelliteSearch onSearchSubmit={this.submitSearch} />
-          <div className="scan-for-txt"><p>Scan For</p></div>
+          <div className="scan-for-txt">Scan For</div>
           <ArtifactSelection
             artifacts={this.props.artifacts}
             onSelectArtifact={this.artifactSelected}
