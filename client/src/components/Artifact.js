@@ -10,8 +10,11 @@ if(!props) return null;
 
 return (
   <div className='artifact'>
-    <input type="radio" value={props.artifact} checked={props.selectedArtifact == props.artifact} onChange={handleRadioButton} />
+    <div>
+      <input type="radio" value={props.artifact} checked={props.selectedArtifact == props.artifact} onChange={handleRadioButton} />
     {props.artifact.name}
+    </div>
+    <img src={props.artifact.url} alt= {props.artifact.name} className="img-thumbnails"/>
   </div>
   )
 }

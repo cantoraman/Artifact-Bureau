@@ -28,23 +28,22 @@ const MapControl = (props) => {
   }
 
     return(
-      <Map
-        className="map-container"
-        center={props.viewedLocation}
-        zoom={props.zoom}
-        ref={this.mapRef}
-        onClick={handleClick}
-        >
-        {renderMarker()}
+      <div className="map-container">
+        <Map
+          center={props.viewedLocation}
+          zoom={props.zoom}
+          ref={this.mapRef}
+          onClick={handleClick}>
+          {renderMarker()}
+          <TileLayer
+            url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
+            attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors "
+            id= 'mapbox.streets'
 
-        <TileLayer
-          url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
-          attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors "
-          id= 'mapbox.streets'
-
-          accessToken= {API_KEY}
-        />
-      </Map>
+            accessToken= {API_KEY}
+          />
+        </Map>
+      </div>
     );
 
 
