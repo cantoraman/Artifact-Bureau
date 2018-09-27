@@ -127,6 +127,7 @@ background-size:16px 16px;
 .data-library-body{
   padding: 20px;
   font-family: 'Press Start 2P';
+  font-size: 80%;
   background-color:black;
   color: rgb(46, 176, 0);
 }
@@ -147,21 +148,8 @@ background-size:16px 16px;
   display: inline-block;
 }
 
-a:link {
+a{
+    pointer-events: none;
     color: inherit;
-}
-
-/* visited link */
-a:visited {
-    color: green;
-}
-
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
-
-/* selected link */
-a:active {
-    color: blue;
+    text-decoration: none;
 }

@@ -6,6 +6,12 @@ function handleSearchButton(event){
   props.getWikiData(event);
 }
 
+function currentPath(){
+
+}
+
+
+
   return (
     <div className='search-bar'>
       <form onSubmit={handleSearchButton}>
@@ -21,9 +27,10 @@ function handleSearchButton(event){
           value="Search"
         />
       </form>
-      <button className="data-search-button" onClick={handleSearchButton}>Write</button>
+
     </div>
   )
+
 }
 
 export default DataSearch;
