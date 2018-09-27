@@ -80,3 +80,26 @@ The pieces(The Lewis Chessmen) were sold to the player living by the canal that 
 
 ## ToDo:
   map marker changes shape depending on the zoom level of the map
+
+
+REACT HTML PARSER!
+
+Install
+npm install react-html-parser
+# or
+yarn add react-html-parser
+Usage
+import React from 'react';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
+class HtmlComponent extends React.Component {
+  render() {
+    const html = '<div>Example HTML string</div>';
+    return <div>{ ReactHtmlParser(html) }</div>;
+  }
+}
+
+
+
+INSTALL REACT ROUTER
+npm install react-router-dom@next
