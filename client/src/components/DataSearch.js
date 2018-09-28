@@ -16,6 +16,7 @@ function currentPath(){
     <div className='search-bar'>
       <form onSubmit={handleSearchButton}>
         <input
+          className="search-field"
           type="text"
           placeholder="Search For..."
           onKeyUp={props.searchKeyUp}

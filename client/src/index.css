@@ -128,12 +128,22 @@ background-size:16px 16px;
   padding: 20px;
   font-family: 'Press Start 2P';
   font-size: 80%;
+    line-height: 1.6;
   background-color:black;
   color: rgb(46, 176, 0);
+  border-style: inset;
+  border-width: 4px;
+  border-color: rgba(200, 144, 0, 0.71);
 }
 
 .data-library-title{
   color: rgb(46, 176, 0);
+}
+
+.search-field{
+  background-color:black;
+  font-family: inherit;
+  color: inherit;
 }
 
 .data-search-button{

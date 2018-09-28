@@ -42,7 +42,7 @@ setSearchTerm(event) {
   render(){
     return(
       <div className="data-library-body">
-        <div className="data-library-title">Data Library</div>
+        <div className="data-library-title">DATA LIBRARY</div>
         <DataSearch getWikiData={this.getWikiData} searchKeyUp={this.setSearchTerm}/>
         <DataDisplay dataText={this.state.dataText} />
       </div>
