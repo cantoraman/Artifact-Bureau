@@ -11,11 +11,11 @@ app.use(function(req, res, next) {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat', (message) => {
-    io.sockets.emit('chat', message);
+  socket.on('spychat', (message) => {
+    io.sockets.emit('spychat', message);
   });
 });
 
-http.listen(3002, () => {
-  console.log('App listening on port 3002');
+http.listen(3001, () => {
+  console.log('App listening on port 3001');
 });
