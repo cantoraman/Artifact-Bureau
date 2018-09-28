@@ -104,6 +104,4 @@ class HtmlComponent extends React.Component {
 INSTALL REACT ROUTER
 npm install react-router-dom@next
 
-wTF?
-
-npm install html-react-parser --save
+we may not have used this router... for now...

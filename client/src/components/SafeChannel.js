@@ -1,12 +1,25 @@
 import React from 'react';
+import SpyChatBox from '../components/SpyChatBox';
+import SpyMessage from '../components/SpyMessage';
+import io from 'socket.io-client';
+
 
 class SafeChannel extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      message : null
-    }
+      side: null,
+      message: null,
+      messages: []
+  };
   }
+
+
+
+
+
+
+
 
 
   render(){
