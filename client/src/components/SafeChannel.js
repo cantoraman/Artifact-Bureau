@@ -14,39 +14,47 @@ class SafeChannel extends React.Component{
 
 
   this.socket = io('http://localhost:3001');
-      this.socket.on('spychat', this.addNewMessage.bind(this));
-      this.submitMessage = this.submitMessage.bind(this);
-      this.setMessage = this.setMessage.bind(this);
+  this.socket.on('spychat', this.addNewMessage.bind(this));
+  this.scrollToBottom = this.scrollToBottom.bind(this);
+  this.onSubmit = this.onSubmit.bind(this);
   }
 
-  setMessage(event) {
-    this.setState({
-      message: event.target.value
-    });
-  }
 
   addNewMessage(message){
     const messages = this.state.messages;
     const newMessages = [...messages, ...[message]];
     this.setState({
+      message: null,
       messages: newMessages
     });
   }
-
-
-
-  submitMessage(event) {
-    event.preventDefault();
-    if (this.state.message) {
+  
+  onSubmit(message){
+    if (message) {
       const newMessage = {
          sender: this.props.side,
-         text: this.state.message
+         text: message
        };
       this.socket.emit('spychat', newMessage);
+      this.setState({
+        message: null
+      });
     }
   }
 
 
+
+
+
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({behavior: "smooth", block: "end"});
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
 
 
   render(){
@@ -62,11 +70,17 @@ class SafeChannel extends React.Component{
 
   return(
     <div className="safe-channel">
+
+      <div className="message-list">
+        {allMessages}
+        <div style={{}}
+             ref={(element) => { this.messagesEnd = element; }}>
+        </div>
+      </div>
       <SpyChatBox
-        setMessage={this.setMessage}
-        onSubmit={this.submitMessage}
+        onSubmit={this.onSubmit}
       />
-      {allMessages}
+
     </div>);
   }
 

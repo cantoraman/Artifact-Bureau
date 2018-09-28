@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 
   background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
 }
 
 .page-title{
@@ -45,16 +45,6 @@ background-size:16px 16px;
   grid-template-rows: auto auto;
 }
 
-
-.safe-channel {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 2;
-  margin: 10px;
-  /* width: 40%; */
-  border-style: inset;
-  border-width: 8px;
-  border-color: grey;
-}
 
 .data-library {
   grid-column: 1 / span 1;
@@ -128,7 +118,7 @@ background-size:16px 16px;
   padding: 20px;
   font-family: 'Press Start 2P';
   font-size: 80%;
-    line-height: 1.6;
+  line-height: 1.6;
   background-color:black;
   color: rgb(46, 176, 0);
   border-style: inset;
@@ -158,8 +148,53 @@ background-size:16px 16px;
   display: inline-block;
 }
 
+
+.safe-channel {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  margin: 10px;
+  /* width: 40%; */
+  border-style: inset;
+  border-width: 8px;
+  border-color: grey;
+
+  background-color: rgba(171, 171, 171, 0.39);
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.message-list{
+  min-height: 80vh;
+  max-height: 80vh;
+
+  overflow: scroll;
+
+}
+
+.chat-box{
+  border-style: solid;
+  background-color: rgba(171, 171, 171, 0.39);
+  border-width: 1px;
+  border-color: black;
+
+  min-height: 20vh;
+  max-height: 20vh;
+
+}
+
+.text-area, .text-submit{
+  margin: 5%;
+}
+
 a{
     pointer-events: none;
     color: inherit;
     text-decoration: none;
+}
+
+.message{
+    font-family: 'Special Elite', serif;
+    margin: 10px;
+    font-size: 110%;
+
 }
