@@ -105,3 +105,7 @@ INSTALL REACT ROUTER
 npm install react-router-dom@next
 
 we may not have used this router... for now...
+
+
+for socket io  - client and server side are installed separately 
+npm install --save socket.io

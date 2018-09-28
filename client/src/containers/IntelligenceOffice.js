@@ -75,7 +75,7 @@ render(){
       <SatelliteControl
         artifacts={this.state.artifacts}
         artifactFound={this.artifactFound}/>
-      <SafeChannel />
+      <SafeChannel side="HQ"/>
       <DataLibrary />
       <ArtifactStorage />
     </div>
