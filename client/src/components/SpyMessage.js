@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SpyMessage = ({ side, text }) => {
+const SpyMessage = ({ sender, text }) => {
   return (
     <div className="message">
-      <div>{side}: {text}</div>
+      <div>{sender}: {text}</div>
     </div>
   );
 };

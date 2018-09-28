@@ -107,5 +107,21 @@ npm install react-router-dom@next
 we may not have used this router... for now...
 
 
-for socket io  - client and server side are installed separately 
+for socket io  - client and server side are installed separately
 npm install --save socket.io
+
+
+
+
+A better way to concatenate arrays
+Array.concat is often used to concatenate an array to the end of an existing array. Without spread syntax this is done as:
+
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+// Append all items from arr2 onto arr1
+arr1 = arr1.concat(arr2);
+With spread syntax this becomes:
+
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1 = [...arr1, ...arr2];

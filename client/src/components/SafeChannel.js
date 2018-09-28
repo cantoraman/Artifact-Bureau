@@ -27,11 +27,13 @@ class SafeChannel extends React.Component{
 
   addNewMessage(message){
     const messages = this.state.messages;
-    const newMessages = [message, ...messages];
+    const newMessages = [...messages, ...[message]];
     this.setState({
       messages: newMessages
     });
   }
+
+
 
   submitMessage(event) {
     event.preventDefault();
