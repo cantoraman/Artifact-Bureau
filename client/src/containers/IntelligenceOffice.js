@@ -9,24 +9,7 @@ class IntelligenceOffice extends React.Component{
   constructor(props) {
     super(props)
 
-
-    this.artifactFound = this.artifactFound.bind(this);
   }
-
-
-artifactFound(foundArtifact){
-  for (var artifact of this.props.artifacts)
-  {
-    if(artifact.name === foundArtifact.name){
-      let newArtifact=artifact;
-      newArtifact.lost=false;
-      this.setState({
-        artifact: newArtifact
-      });
-    }
-  }
-}
-
 
   render(){
     return(
@@ -37,7 +20,7 @@ artifactFound(foundArtifact){
           description="" />
         <SatelliteControl
           artifacts={this.props.artifacts}
-          artifactFound={this.artifactFound}/>
+          artifactFound={this.props.artifactFound}/>
         <SafeChannel side="HQ"/>
         <DataLibrary />
         <ArtifactStorage />

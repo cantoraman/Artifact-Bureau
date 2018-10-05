@@ -57,8 +57,26 @@ class MainTerminal extends React.Component{
         }
       ]
     }
+    this.artifactFound = this.artifactFound.bind(this);
 
 }
+
+artifactFound(foundArtifact){
+  console.log("ASDASD");
+  for (var artifact of this.state.artifacts)
+  {
+    if(artifact.name === foundArtifact.name){
+      let newArtifact=artifact;
+      newArtifact.lost=false;
+      newArtifact.name="FOUND!"
+      this.setState({
+        artifact: newArtifact
+      });
+    }
+  }
+}
+
+
 
   render() {
       return (
@@ -66,7 +84,7 @@ class MainTerminal extends React.Component{
           <React.Fragment>
             <Route exact path="/" component={TerminalSelector} />
             <Route path="/server-room" render={()=><ServerRoom artifacts={this.state.artifacts}/>} />
-            <Route path="/intelligence-office" render={()=><IntelligenceOffice artifacts={this.state.artifacts} />}/>
+            <Route path="/intelligence-office" render={()=><IntelligenceOffice artifacts={this.state.artifacts} artifactFound={this.artifactFound}/>}/>
           </React.Fragment>
         </Router>
       )
