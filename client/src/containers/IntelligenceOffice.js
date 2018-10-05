@@ -66,22 +66,21 @@ artifactFound(foundArtifact){
 }
 
 
-render(){
-  return(
-    <div className="crt">
-    <div className="intelligence-office-container">
-      <PageTitle
-        title="The Intelligence Office"
-        description="" />
-      <SatelliteControl
-        artifacts={this.state.artifacts}
-        artifactFound={this.artifactFound}/>
-      <SafeChannel side="HQ"/>
-      <DataLibrary />
-      <ArtifactStorage />
-    </div>
-  </div>
-  );
+  render(){
+    return(
+
+      <div className="intelligence-office-container">
+        <PageTitle
+          title="The Intelligence Office"
+          description="" />
+        <SatelliteControl
+          artifacts={this.state.artifacts}
+          artifactFound={this.artifactFound}/>
+        <SafeChannel side="HQ"/>
+        <DataLibrary />
+        <ArtifactStorage />
+      </div>
+    );
 
   }
 
