@@ -62,7 +62,8 @@ class MainTerminal extends React.Component{
 }
 
 artifactFound(foundArtifact){
-  console.log("ASDASD");
+  let found =0;
+  let all=this.state.artifacts.length;
   for (var artifact of this.state.artifacts)
   {
     if(artifact.name === foundArtifact.name){
@@ -73,10 +74,13 @@ artifactFound(foundArtifact){
         artifact: newArtifact
       });
     }
+    if (artifact.lost===false){
+        found++;
+        if(found==all)
+          console.log("WON");
+        }
   }
 }
-
-
 
   render() {
       return (
