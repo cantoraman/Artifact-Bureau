@@ -17,7 +17,15 @@ body {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto auto;
 }
-
+.server-room-container{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+}
+.hacked-files{
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
 .sat-control {
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
@@ -136,6 +144,9 @@ body {
 .img-thumbnails{
   max-height: 50px;
 }
+.img-secret{
+  max-height: 100px;
+}
 
 .artifact{
   border-style: solid;
@@ -144,7 +155,7 @@ body {
   border-radius:3px 3px 3px 3px;
 }
 
-.data-library-body, .terminal-selector{
+.data-library-body, .terminal-selector, .server-room-container{
   padding: 20px;
   font-family: 'Press Start 2P';
   font-size: 80%;
@@ -156,9 +167,11 @@ body {
   border-color: rgba(200, 144, 0, 0.71);
 }
 
+
 .terminal-selector{
   height:600px;
 }
+
 
 .data-library-title{
   color: rgb(46, 176, 0);

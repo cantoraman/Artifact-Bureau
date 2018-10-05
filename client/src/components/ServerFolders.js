@@ -7,8 +7,10 @@ const ServerFolders = (props) => {
 
   return(
     <div className="folder">
+      <div>DECIPHERING: data{props.id}.dat</div>
       {props.artifact.secretMessage}
-      {secretPictureExist ? <img src={props.artifact.url} className="img-thumbnails"/> : ""}
+      <div>{secretPictureExist ? <img src={props.artifact.url} className="img-secret"/> : ""}</div>
+      <div>data{props.id}.dat | FILE ENDS <br/><br/></div>
     </div>
   );
 
