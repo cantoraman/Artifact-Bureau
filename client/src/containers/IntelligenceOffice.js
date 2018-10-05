@@ -68,10 +68,11 @@ artifactFound(foundArtifact){
 
 render(){
   return(
+    <div className="crt">
     <div className="intelligence-office-container">
       <PageTitle
         title="The Intelligence Office"
-        description="HQ" />
+        description="" />
       <SatelliteControl
         artifacts={this.state.artifacts}
         artifactFound={this.artifactFound}/>
@@ -79,6 +80,7 @@ render(){
       <DataLibrary />
       <ArtifactStorage />
     </div>
+  </div>
   );
 
   }

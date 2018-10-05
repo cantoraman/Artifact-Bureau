@@ -97,7 +97,7 @@ class SatelliteControl extends React.Component{
     return(
       <div className="sat-control">
         <MapControl
-          
+
           viewedLocation={this.state.coordinates}
           onMapClicked={this.mapClicked}
           markerCoordinates={this.state.markerCoordinates}
@@ -106,7 +106,6 @@ class SatelliteControl extends React.Component{
         />
         <div className="sat-side-bar">
           <SatelliteSearch onSearchSubmit={this.submitSearch} />
-          <div className="scan-for-txt">Scan For</div>
           <ArtifactSelection
             artifacts={this.props.artifacts}
             onSelectArtifact={this.artifactSelected}

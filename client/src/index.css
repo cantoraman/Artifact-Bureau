@@ -13,16 +13,21 @@ body {
 }
 
 .page-title{
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
   grid-row: 1 / span 1;
   background-color:rgba(255, 0, 0, 0.39);
-  /* font-family: 'Oswald', sans-serif;
-  font-family: 'Press Start 2P', cursive; */
+  background-image: url(./helpers/but-crest.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* font-family: 'Oswald', sans-serif; */
+  /* font-family: 'Press Start 2P', cursive; */
   font-family: 'IM Fell English SC', serif;
   color: rgb(241, 181, 0);
   /* width: 40%; */
   margin: 10px;
-  padding: 10px;
+  padding: 1px;
 }
 
 
@@ -33,7 +38,7 @@ body {
 
 .sat-control {
   grid-column: 1 / span 1;
-  grid-row: 2 / span 1;
+  grid-row: 1 / span 2;
   margin: 10px;
   /* width: 40%; */
   border-style: inset;
@@ -75,7 +80,7 @@ body {
 
 .map-container{
   grid-column: 1 / span 1;
-  grid-row: 1 / span 6;
+  grid-row: 1 / span 5;
   border-style: solid;
   border-width: 1px;
   border-color: maroon;
@@ -112,6 +117,7 @@ body {
   border-style: solid;
   border-width: 1px;
   border-color: maroon;
+  border-radius:3px 3px 3px 3px;
 }
 
 .data-library-body{
@@ -151,7 +157,7 @@ body {
 
 .safe-channel {
   grid-column: 2 / span 1;
-  grid-row: 1 / span 2;
+  grid-row: 2 / span 2;
   margin: 10px;
   /* width: 40%; */
   border-style: inset;
@@ -197,4 +203,50 @@ a{
     margin: 10px;
     font-size: 110%;
 
+}
+
+
+#panel {
+	list-style:none;
+	padding-top:30px;
+	display:inline-block;
+}
+
+#panel li {
+	border-radius:3px 3px 3px 3px;
+	margin-top:5px;
+
+	background: #000000;
+	background: -moz-linear-gradient(top, #161616 0%, #000000 100%);
+	background: -webkit-linear-gradient(top, #161616 0%,#000000 100%);
+	background: -o-linear-gradient(top, #161616 0%,#000000 100%);
+	border-left:1px solid #111;
+        border-top:1px solid #111;
+        border-right:1px solid #333;
+        border-bottom:1px solid #333;
+}
+
+#panel li {
+	color:rgb(241, 181, 0);
+	display:block;
+	padding:10px;
+}
+
+#panel li:hover {
+	color:#78c200;
+}
+
+#panel li.animation {
+	-moz-transition: all 0.4s ease-in-out;
+	-moz-transform:translateX(0px);
+	-o-transition: all 0.4s ease-in-out;
+	-o-transform:translateX(0px);
+	-webkit-transition: all 0.2s ease-in-out;
+	-webkit-transform:translateX(0px);
+}
+
+#panel li.animation:hover {
+	-moz-transform:translateX(25px);
+	-o-transform:translateX(25px);
+	-webkit-transform:translateX(25px);
 }

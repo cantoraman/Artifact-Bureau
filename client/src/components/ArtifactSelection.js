@@ -3,15 +3,16 @@ import Artifact from './Artifact';
 
 const ArtifactSelection = (props) => {
 
+
   const displayArtifacts = props.artifacts.map((artifact, index) => {
     return (
-      <div>
+
         <Artifact
           artifact={artifact}
           handleSelect={props.onSelectArtifact}
           selectedArtifact={props.selectedArtifact}
           key={index}/>
-      </div>
+
     )
   });
 
@@ -22,7 +23,10 @@ const ArtifactSelection = (props) => {
 
 
     return(
-      <div className="artifact-selection-list">
+      <div
+        className="artifact-selection-list"
+        id="panel">
+          <div className="scan-for-txt">Scan For</div>
         {displayArtifacts}
       </div>
     );
