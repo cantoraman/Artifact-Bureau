@@ -12,6 +12,24 @@ body {
   background-size:16px 16px;
 }
 
+.intelligence-office-container{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+.sat-control {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+  margin: 10px;
+  border-style: inset;
+  border-width: 8px;
+  border-color: grey;
+
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+}
 .page-title{
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
@@ -25,38 +43,47 @@ body {
   /* font-family: 'Press Start 2P', cursive; */
   font-family: 'IM Fell English SC', serif;
   color: rgb(241, 181, 0);
-  /* width: 40%; */
   margin: 10px;
   padding: 1px;
 }
 
 
-.leaflet-container {
-  height: 100%;
-  /* width: 100%; */
-}
-
-.sat-control {
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 2;
+.safe-channel {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   margin: 10px;
-  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
 
-  display:grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
+  background-color: rgba(171, 171, 171, 0.39);
+  min-height: 70vh;
+  max-height: 70vh;
 }
+.message-list{
+  min-height: 60vh;
+  max-height: 60vh;
+  overflow: scroll;
+}
+.chat-box{
+  border-style: solid;
+  background-color: rgba(171, 171, 171, 0.39);
+  border-width: 1px;
+  border-color: black;
 
+  min-height: 10vh;
+  max-height: 10vh;
+
+}
+.leaflet-container {
+  height: 100%;
+}
 
 .data-library {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
 
   margin: 10px;
-  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
@@ -66,17 +93,12 @@ body {
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
   margin: 10px;
-  /* width: 40%; */
   border-style: inset;
   border-width: 8px;
   border-color: grey;
 }
 
-.intelligence-office-container{
-  display:grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto auto;
-}
+
 
 .map-container{
   grid-column: 1 / span 1;
@@ -91,16 +113,18 @@ body {
   font-family: 'Oswald', serif;
   color: rgb(241, 181, 0);
   grid-column: 2 / span 1;
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 2;
   border-style: solid;
   border-width: 1px;
   border-color: maroon;
 }
 
 .search-form, .scan-for-txt, .artifact-selection-list, .scan-button-container, .scan-message {
-  margin: auto;
   width: 80%;
-  padding: 10px;
+  padding-left: 5px;
+}
+.search-form{
+  padding-top: 4px;
 }
 
 .scan-button{
@@ -154,40 +178,6 @@ body {
   display: inline-block;
 }
 
-
-.safe-channel {
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 2;
-  margin: 10px;
-  /* width: 40%; */
-  border-style: inset;
-  border-width: 8px;
-  border-color: grey;
-
-  background-color: rgba(171, 171, 171, 0.39);
-  min-height: 100vh;
-  max-height: 100vh;
-}
-
-.message-list{
-  min-height: 80vh;
-  max-height: 80vh;
-
-  overflow: scroll;
-
-}
-
-.chat-box{
-  border-style: solid;
-  background-color: rgba(171, 171, 171, 0.39);
-  border-width: 1px;
-  border-color: black;
-
-  min-height: 20vh;
-  max-height: 20vh;
-
-}
-
 .text-area, .text-submit{
   margin: 5%;
 }
@@ -205,10 +195,9 @@ a{
 
 }
 
-
 #panel {
 	list-style:none;
-	padding-top:30px;
+	padding-top:10px;
 	display:inline-block;
 }
 
