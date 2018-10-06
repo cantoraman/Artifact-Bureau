@@ -55,10 +55,10 @@ class MainTerminal extends React.Component{
           secretMessage: "The pieces were sold to the player living by the canal that connects the oceans.",
           secretPicture: false
         }
-      ]
+      ],
+      hasWon:false
     }
     this.artifactFound = this.artifactFound.bind(this);
-
 }
 
 artifactFound(foundArtifact){
@@ -76,8 +76,11 @@ artifactFound(foundArtifact){
     }
     if (artifact.lost===false){
         found++;
-        if(found==all)
-          console.log("WON");
+        if(found==all){
+          this.setState({
+            hasWon: true
+          });
+        }
         }
   }
 }
@@ -88,7 +91,12 @@ artifactFound(foundArtifact){
           <React.Fragment>
             <Route exact path="/" component={TerminalSelector} />
             <Route path="/server-room" render={()=><ServerRoom artifacts={this.state.artifacts}/>} />
-            <Route path="/intelligence-office" render={()=><IntelligenceOffice artifacts={this.state.artifacts} artifactFound={this.artifactFound}/>}/>
+            <Route path="/intelligence-office" render={()=>
+              <IntelligenceOffice
+                artifacts={this.state.artifacts}
+                artifactFound={this.artifactFound}
+                hasWon={this.state.hasWon}
+              />}/>
           </React.Fragment>
         </Router>
       )
