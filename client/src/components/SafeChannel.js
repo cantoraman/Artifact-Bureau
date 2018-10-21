@@ -13,7 +13,7 @@ class SafeChannel extends React.Component{
   };
 
 
-  this.socket = io('http://localhost:3001');
+  this.socket = io('http://localhost:3002');
   this.socket.on('spychat', this.addNewMessage.bind(this));
   this.scrollToBottom = this.scrollToBottom.bind(this);
   this.onSubmit = this.onSubmit.bind(this);
@@ -28,7 +28,7 @@ class SafeChannel extends React.Component{
       messages: newMessages
     });
   }
-  
+
   onSubmit(message){
     if (message) {
       const newMessage = {

@@ -10,17 +10,13 @@ class SatelliteControl extends React.Component{
     super(props);
     this.state = {
       coordinates : [51.505, -0.09],
-      name : "London",
-      currentLocation : null,
       markered : false,
       markerCoordinates: [],
-      scanned : false,
       scanSensitivity: [0.5,0.5],
       zoom: 4,
       artifactToScanSelected: false,
       artifactSelection: null,
-      scanMessage: "Waiting Scanner...",
-      opacity: 0
+      scanMessage: "Waiting Scanner..."
     }
     this.submitSearch = this.submitSearch.bind(this);
     this.mapClicked = this.mapClicked.bind(this);
