@@ -125,3 +125,21 @@ With spread syntax this becomes:
 var arr1 = [0, 1, 2];
 var arr2 = [3, 4, 5];
 arr1 = [...arr1, ...arr2];
+
+
+4 10
+50  200
+25  100
+Refactoring: The Map Marker
+During the MVP phase I decided to settle with a single sized icon for the scanner marker. The issue was negligible. Irrespective of the zoom level of the map, the icon (which is a representation of the range of our satellite scanners) stayed the same size.
+Here is a simple solution:
+
+Zoom level starts at 4, hovering over Europe; and when somewhere is searched it brings the map to a closer level (10). At this level, the default icon size (100x100) is fitting. But if you zoom out, it start to look ugly.
+
+The idea is have a 50x50 at zoom level 4, and 100x100 at 10th as extremes. In between, the icon will be sized linearly.
+y = 8.33x+16.7 - x being the zoom level. Using this function in itself will not produce visually pleasing results and it has to be clamped. This is done by nesting a math.max in a math.min.
+
+The solution is implemented like this:
+
+
+The anchor is where the image is centered. It's origin is at the half point of each dimension.

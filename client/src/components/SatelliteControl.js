@@ -93,7 +93,6 @@ class SatelliteControl extends React.Component{
     return(
       <div className="sat-control">
         <MapControl
-
           viewedLocation={this.state.coordinates}
           onMapClicked={this.mapClicked}
           markerCoordinates={this.state.markerCoordinates}
