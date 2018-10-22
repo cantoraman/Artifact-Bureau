@@ -23,6 +23,7 @@ class SatelliteControl extends React.Component{
     this.scanClicked = this.scanClicked.bind(this);
     this.scanForArtifact = this.scanForArtifact.bind(this);
     this.artifactSelected = this.artifactSelected.bind(this);
+    this.viewportChanged = this.viewportChanged.bind(this);
 
   }
 
@@ -33,7 +34,6 @@ class SatelliteControl extends React.Component{
     return res.json();
     })
     .then((locationData) => {
-      console.log(locationData[0].lat, locationData[0].lon);
       this.setState({
         zoom: 10,
         coordinates: [locationData[0].lat, locationData[0].lon],
@@ -67,6 +67,13 @@ class SatelliteControl extends React.Component{
     this.scanForArtifact(this.state.artifactSelection);
   }
 
+  viewportChanged(zoomlevel){
+    if(this.state.zoom!=zoomlevel)
+      this.setState({
+        zoom:zoomlevel
+      })
+  }
+
   scanForArtifact(artifactSelection){
 
     const artifact = artifactSelection;
@@ -95,6 +102,7 @@ class SatelliteControl extends React.Component{
         <MapControl
           viewedLocation={this.state.coordinates}
           onMapClicked={this.mapClicked}
+          viewportChanged={this.viewportChanged}
           markerCoordinates={this.state.markerCoordinates}
           markered={this.state.markered}
           zoom={this.state.zoom}

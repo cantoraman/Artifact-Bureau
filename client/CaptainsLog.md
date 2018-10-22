@@ -141,5 +141,61 @@ y = 8.33x+16.7 - x being the zoom level. Using this function in itself will not 
 
 The solution is implemented like this:
 
+function renderMarker(){
 
-The anchor is where the image is centered. It's origin is at the half point of each dimension.
+  const newSize = Math.min(100, Math.max(50, props.zoom*8.33+16.7));
+
+  const image = new Leaflet.Icon({
+   iconUrl: require('../helpers/radar3.gif'),
+   iconSize:     [newSize, newSize],
+   iconAnchor:   [newSize/2, newSize/2],
+  });
+
+  if(props.markered)
+  {
+    return (<Marker
+      icon= {image}
+      position={props.markerCoordinates}
+    />)
+  }
+}
+
+The anchor is where the icon is centered. It's origin is at the half point of each dimension.
+
+Furthermore, we end up with another technical challenge. When the user zooms in or out with the map's zoom controls, it does not fire up a render. To trigger it we need to add onViewportChanged dynamic property to the react-leaflet-map.
+
+in MapControl:
+
+function onViewportChanged (evt){
+  props.viewportChanged(evt.zoom)
+ }
+
+  return(
+    <div className="map-container">
+      <Map
+        center={props.viewedLocation}
+        zoom={props.zoom}
+        ref={this.mapRef}
+        onViewportChange={onViewportChanged}
+        onClick={handleClick}>
+        {renderMarker()}
+        <TileLayer
+          url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
+          attribution="&copy; <a href=&quot;https://www.openstreetmap.org;>OpenStreetMap</a> contributors "
+          id= 'mapbox.streets'
+          accessToken= {API_KEY}
+        />
+      </Map>
+    </div>
+  );
+}
+
+
+It triggers a render by setState in SatelliteControl:
+
+viewportChanged(zoomlevel){
+  if(this.state.zoom!=zoomlevel)
+    this.setState({
+      zoom:zoomlevel
+    })
+}

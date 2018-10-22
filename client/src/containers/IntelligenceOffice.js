@@ -7,9 +7,7 @@ import PageTitle from '../components/PageTitle';
 import WinMessage from '../components/WinMessage';
 
 class IntelligenceOffice extends React.Component{
-  constructor(props) {
-    super(props)
-}
+
 
   render(){
     return(

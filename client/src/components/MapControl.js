@@ -10,7 +10,7 @@ const MapControl = (props) => {
   function renderMarker(){
 
     const newSize = Math.min(100, Math.max(50, props.zoom*8.33+16.7));
-    
+
     const image = new Leaflet.Icon({
      iconUrl: require('../helpers/radar3.gif'),
      iconSize:     [newSize, newSize],
@@ -30,12 +30,17 @@ const MapControl = (props) => {
     props.onMapClicked(evt.latlng);
   }
 
+  function onViewportChanged (evt){
+    props.viewportChanged(evt.zoom)
+   }
+
     return(
       <div className="map-container">
         <Map
           center={props.viewedLocation}
           zoom={props.zoom}
           ref={this.mapRef}
+          onViewportChange={onViewportChanged}
           onClick={handleClick}>
           {renderMarker()}
           <TileLayer
@@ -48,9 +53,6 @@ const MapControl = (props) => {
         </Map>
       </div>
     );
-
-
-
 }
 
 
