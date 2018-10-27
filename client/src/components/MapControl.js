@@ -9,7 +9,7 @@ const MapControl = (props) => {
 
   function renderMarker(){
 
-    const newSize = Math.min(100, Math.max(50, props.zoom*8.33+16.7));
+    const newSize = Math.min(200, Math.max(20, props.zoom*8.33+16.7));
 
     const image = new Leaflet.Icon({
      iconUrl: require('../helpers/radar3.gif'),

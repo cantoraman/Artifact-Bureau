@@ -4,6 +4,9 @@ Artifact Bureau is an educational web app built with React that lets students pl
 One browser has the clues, the other one has the access to a data library and a satellite system to track the artifacts. Their only connection is through a chat screen.
 The app implements websocket to establish chat, uses leaflet maps for satellite tracking, and makes basic API calls for wikipedia to populate Data Library.
 
+### Working Example:
+https://artifact-bureau.herokuapp.com/
+
 ### To Run:
 npm install
 npm start on both client and server directories
@@ -12,7 +15,7 @@ visit http://localhost:3001/
 ### The Story:
 
 A thief has stolen artefacts from the British Museum, and the students are tasked with finding the artefacts.
-Luckily we have found the scoundrel's server room, and send the half of our students to get the locations out of the servers. But when we get there, we see a problem. 
+Luckily we have found the scoundrel's server room, and send the half of our students to get the locations out of the servers. But when we get there, we see a problem.
 
 The wherabouts of the artifacts are verbally encyrpted; meaning, they are turned into riddles. Because of the security measures put in place at the server room, the students can only use a crude chat interface to communicate with their friends on the headquarters of the Artifact Bureau.
 
@@ -34,7 +37,5 @@ Once the students have an idea about the location of an artifact they need to fo
 If the scan is a miss, you will see a message under the button saying "Scan Failed", otherwise it will say "Artifact Found" and replace the name of the artifact in the list as "Found".
 
 ##### Data Library:
-While solving the riddles, the students are not allowed to use Google or *REAL* Wikipedia. Their only access to data is through Data Library. 
+While solving the riddles, the students are not allowed to use Google or *REAL* Wikipedia. Their only access to data is through Data Library.
 The Data Library is a very old database where it only displays on green and black screen and makes case sensitive searches. The most important thing that the students need to know about the Library is that the search is really *CASE SENSITIVE*.
-
-
