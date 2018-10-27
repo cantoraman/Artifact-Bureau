@@ -278,3 +278,13 @@ a{
 .stroke-behind {
   paint-order: stroke fill;
 }
+
+.terminal-link{
+  color: rgb(208, 255, 0);
+}
+.terminal-link:hover {
+	color:#ff0000;
+}
+.terminal-header{
+  color:rgb(0, 162, 255);
+}
