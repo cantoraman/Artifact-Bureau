@@ -8,9 +8,9 @@ The app implements WebSocket to establish chat, uses leaflet maps for satellite 
 https://artifact-bureau.herokuapp.com/
 
 ### To Run:
--npm install
--npm start on both client and server directories
--visit http://localhost:3000/
+- npm install
+- npm start on both client and server directories
+- visit http://localhost:3000/
 
 ### The Story:
 
