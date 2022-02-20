@@ -1,7 +1,9 @@
 ## Artifact Bureau
 
-Artifact Bureau is an educational web app built with React that lets students play a treasure hunt on two browsers by doing research on matters like geography and culture.
-One browser has the clues, the other one has the access to a data library and a satellite system to track the artifacts. Their only connection is through a chat screen.
+Artifact Bureau is an educational web app built with React that lets students play a browser based treasure hunt by doing research on matters like geography and culture by using in-game terminal and interactive map interface.
+
+Divided in two teams and two different client interfaces, one group picks up the clues, while the other one does the research. Researching part has access to a data library and a satellite system to track the artifacts. Two group's only connection is through a chat screen.
+
 The app implements WebSocket to establish chat, uses leaflet maps for satellite tracking, and makes basic API calls for Wikipedia to populate Data Library.
 
 ### Working Example:
